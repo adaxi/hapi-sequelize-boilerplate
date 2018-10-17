@@ -12,7 +12,7 @@ exports.plugin = {
     const modelDirectory = Path.join(__dirname, 'models')
 
     fs
-      .readdirSync()
+      .readdirSync(modelDirectory)
       .filter(file => {
         return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js')
       })

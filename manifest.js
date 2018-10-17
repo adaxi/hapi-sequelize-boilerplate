@@ -25,7 +25,10 @@ module.exports = (options) => ({
           }
         }
       },
-      `./src/database`,
+      {
+        plugin: `./src/database`,
+        options: options.database
+      },
       `./src/model`
     ]
   }
