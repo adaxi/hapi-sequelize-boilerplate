@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const Path = require('path')
+
+module.exports = {
+  'config': Path.resolve('src', 'database', 'config', 'config.json'),
+  'models-path': Path.resolve('src', 'model', 'models'),
+  'seeders-path': Path.resolve('src', 'model', 'seeders'),
+  'migrations-path': Path.resolve('src', 'model', 'migrations')
+}
