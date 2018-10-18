@@ -1,8 +1,18 @@
+'use strict'
 
-const Path = require('path')
-const Fs = require('fs')
 const Ini = require('ini')
+const Fs = require('fs')
+const Path = require('path')
 
-const config = Ini.parse(Fs.readFileSync(Path.join('..', '..', 'config.ini'), 'utf-8'))
+const { NODE_CONFIG_DIR } = process.env
+const configurationFile = NODE_CONFIG_DIR
+  ? Path.join(NODE_CONFIG_DIR, 'config.ini')
+  : Path.join('..', '..', 'config.ini')
 
-module.exports = config.database
+const config = Ini.parse(Fs.readFileSync(configurationFile, 'utf-8'))
+
+module.exports = {
+  development: config.database,
+  testing: config.database,
+  production: config.database
+}
