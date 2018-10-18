@@ -11,7 +11,6 @@ To use it:
 This will start a MariaDB database and starts up the server which starts listening on port http://localhost:8080/.
 
 This service uses `nodemon` to reload the server whenever a change is made.
-Docker starts `nodemon` this mode automatically.
 Currently, `/src`, `index.js` and `manifest.js` are monitored. You can change this configuration in `package.json`.
 
 If you do not desire to use docker, and prefer to connect to an existing database:
