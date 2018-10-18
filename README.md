@@ -8,7 +8,7 @@ To use it:
  1. `npm install`
  2. `docker-compose up`
 
-This will start a MariaDB database and starts up the server and starts listening on port http://localhost:8080/.
+This will start a MariaDB database and starts up the server which starts listening on port http://localhost:8080/.
 
 This service uses `nodemon` to reload the server whenever a change is made.
 Docker starts `nodemon` this mode automatically.
