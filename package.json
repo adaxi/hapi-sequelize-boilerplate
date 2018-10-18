@@ -6,7 +6,6 @@
   "scripts": {
     "test": "standard && echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch config.ini --watch src --watch index.js --watch manifest.js --watch package.json --ext js,pug ./index.js -c config.ini",
-    "model": "sequelize model:create"
   },
   "author": "",
   "license": "ISC",

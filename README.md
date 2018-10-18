@@ -45,10 +45,19 @@ When adding a new plugin: do not forget to include it in the `manifest.js` file.
 ### Models
 
 Models must be store under the `src/model/models`. 
-You can use the `node_modules/.bin/sequelize` command to create models. 
+You can use the `sequelize` command to create models. 
 When using this command the models will automatically be placed in the correct place.
 
-You can use the `node_modules/.bin/sequelize` migrations and seeders.
+You can use the `sequelize` migrations and seeders.
+
+To avoid typing `node_modules/.bin/sequelize` and use `sequelize` cli directly add `./node_modules/.bin` to your path.
+```
+export PATH="$PATH:./node_modules/.bin"
+```
+More permanently:
+```
+echo 'PATH="$PATH:./node_modules/.bin"' >> ~/.bash_profile
+```
 
 Structure
 ---------
