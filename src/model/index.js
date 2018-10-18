@@ -1,6 +1,6 @@
 'use strict'
 
-const fs = require('fs')
+const Fs = require('fs')
 const Path = require('path')
 
 exports.plugin = {
@@ -11,7 +11,7 @@ exports.plugin = {
     const models = {}
     const modelDirectory = Path.join(__dirname, 'models')
 
-    fs
+    Fs
       .readdirSync(modelDirectory)
       .filter(file => {
         return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js')
