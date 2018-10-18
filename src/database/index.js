@@ -4,21 +4,19 @@ const Hoek = require('hoek')
 const Sequelize = require('sequelize')
 
 const defaults = {
-  uri: null,
+  database: null,
+  username: null,
+  password: null,
   operatorsAliases: false
 }
-
-const {
-  NODE_ENV = 'development'
-} = process.env
 
 exports.plugin = {
   pkg: require('./package.json'),
   register: async function (server, options) {
-    const settings = Hoek.applyToDefaults(defaults, options[NODE_ENV] || {})
+    const settings = Hoek.applyToDefaults(defaults, options || {})
     settings.logging = (...args) => server.log([ 'database' ], ...args)
-    console.log(settings)
-    const sequelize = new Sequelize(settings.uri, settings)
+    const { username, password, database, ...configuration } = settings
+    const sequelize = new Sequelize(database, username, password, configuration)
 
     if (process.env.NODE_ENV === 'development') {
       server.ext('onPreStart', async () => {
