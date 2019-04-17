@@ -4,8 +4,8 @@ module.exports = (options) => ({
   server: options.server,
   register: {
     plugins: [
-      `inert`,
-      `vision`,
+      `@hapi/inert`,
+      `@hapi/vision`,
       `hapi-swagger`,
       {
         plugin: `good`,

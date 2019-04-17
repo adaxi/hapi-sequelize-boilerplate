@@ -6,8 +6,7 @@ const Sequelize = require('sequelize')
 const defaults = {
   database: null,
   username: null,
-  password: null,
-  operatorsAliases: false
+  password: null
 }
 
 exports.plugin = {

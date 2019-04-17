@@ -2,7 +2,7 @@
 
 'use strict'
 
-const Glue = require('glue')
+const Glue = require('@hapi/glue')
 
 const defaultConfigFile = (process.env.NODE_ENV === 'development')
   ? 'config.ini'
