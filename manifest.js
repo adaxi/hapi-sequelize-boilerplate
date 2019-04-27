@@ -7,18 +7,19 @@ module.exports = (options) => ({
       `@hapi/inert`,
       `@hapi/vision`,
       `hapi-swagger`,
+      `hapi-auth-cookie`,
       {
-        plugin: `good`,
+        plugin: `@hapi/good`,
         options: {
           reporters: {
             console: [
               {
-                module: 'good-squeeze',
+                module: '@hapi/good-squeeze',
                 name: 'Squeeze',
                 args: [{ log: '*', response: '*' }]
               },
               {
-                module: 'good-console'
+                module: '@hapi/good-console'
               },
               'stderr'
             ]
@@ -29,7 +30,12 @@ module.exports = (options) => ({
         plugin: `./src/database`,
         options: options.database
       },
-      `./src/model`
+      {
+        plugin: `./src/authentication`,
+        options: options.authentication
+      },
+      `./src/model`,
+      `./src/home`
     ]
   }
 })

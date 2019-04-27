@@ -1,9 +1,8 @@
 'use strict'
 
-const Bell = require('bell')
-const Joi = require('joi')
+const Bell = require('@hapi/bell')
+const Joi = require('@hapi/joi')
 const Jwt = require('jsonwebtoken')
-
 
 exports.plugin = {
   pkg: require('./package.json'),
@@ -18,7 +17,7 @@ exports.plugin = {
         scopes: Joi.array().default([]),
         clientId: Joi.string(),
         secret: Joi.string(),
-        cookie: Joi.object({ 
+        cookie: Joi.object({
           password: Joi.string().min(32)
         })
       }),
