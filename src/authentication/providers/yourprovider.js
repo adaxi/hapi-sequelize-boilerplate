@@ -1,7 +1,7 @@
 module.exports = function (options) {
   options = options || {}
 
-  const uri = options.uri || 'https://sandbox.auth.bnpparibasfortis.com/'
+  const uri = options.uri || 'https://sandbox.auth.yourprovider.com/'
   const scopes = options.scopes
 
   return {

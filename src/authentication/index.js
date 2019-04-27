@@ -43,8 +43,10 @@ exports.plugin = {
       }
     })
 
+    const provider = require('./providers/yourprovider')(config.oauth)
+
     server.auth.strategy('oauth', 'bell', {
-      provider: require('./providers/bnpparibasfortis')(config.oauth),
+      provider,
       password: config.oauth.cookie.password,
       clientId: config.oauth.clientId,
       clientSecret: config.oauth.secret,
