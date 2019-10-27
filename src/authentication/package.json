@@ -10,7 +10,7 @@
   "license": "ISC",
   "peerDependencies": {
     "bell": "^10.0.0",
-    "hapi-auth-cookie": "^10.0.0",
+    "@hapi/cookie": "^10.0.0",
     "@hapi/hapi": "^18.2.0"
   },
   "dependencies": {

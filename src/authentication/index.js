@@ -8,7 +8,7 @@ exports.plugin = {
   pkg: require('./package.json'),
   dependencies: [
     'bell',
-    'hapi-auth-cookie'
+    '@hapi/cookie'
   ],
   register: async (server, options) => {
     const config = Joi.attempt(options, Joi.object().required().keys({

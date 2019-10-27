@@ -6,8 +6,8 @@ module.exports = (options) => ({
     plugins: [
       `@hapi/inert`,
       `@hapi/vision`,
+      `@hapi/cookie`,
       `hapi-swagger`,
-      `hapi-auth-cookie`,
       {
         plugin: `@hapi/good`,
         options: {
