@@ -7,7 +7,7 @@ const Jwt = require('jsonwebtoken')
 exports.plugin = {
   pkg: require('./package.json'),
   dependencies: [
-    'bell',
+    '@hapi/bell',
     '@hapi/cookie'
   ],
   register: async (server, options) => {
