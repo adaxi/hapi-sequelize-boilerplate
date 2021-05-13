@@ -31,11 +31,11 @@ module.exports = (options) => ({
         options: options.database
       },
       {
-        plugin: `./src/authentication`,
+        plugin: './src/authentication',
         options: options.authentication
       },
-      `./src/model`,
-      `./src/home`
+      './src/model',
+      './src/home'
     ]
   }
 })

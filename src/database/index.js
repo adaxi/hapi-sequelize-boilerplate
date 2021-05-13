@@ -13,7 +13,7 @@ exports.plugin = {
   pkg: require('./package.json'),
   register: async function (server, options) {
     const settings = Hoek.applyToDefaults(defaults, options || {})
-    settings.logging = (...args) => server.log([ 'database' ], ...args)
+    settings.logging = (...args) => server.log(['database'], ...args)
     const { username, password, database, ...configuration } = settings
     const sequelize = new Sequelize(database, username, password, configuration)
 
