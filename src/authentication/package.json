@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "bell": "^10.0.0",
+    "@hapi/bell": "^12.2.0",
     "@hapi/cookie": "^10.0.0",
     "@hapi/hapi": "^18.2.0"
   },
   "dependencies": {
-    "@hapi/joi": "^15.0.0",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1"
   }
 
