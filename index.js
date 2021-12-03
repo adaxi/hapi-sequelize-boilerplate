@@ -11,11 +11,12 @@ const defaultConfigFile = (process.env.NODE_ENV === 'development')
 const config = require('yargs')
   .usage('Usage: $0 [options]')
   .config('c', 'Configuration file', (configPath) =>
-    require('ini').parse(require('fs').readFileSync(configPath, 'utf-8'))
+    JSON.parse(JSON.stringify(require('ini').parse(require('fs').readFileSync(configPath, 'utf-8'))))
   ).default('c', defaultConfigFile).demand('c').alias('c', 'config')
   .alias('p', 'prefix').nargs('p', 1).describe('p', 'Server route prefix')
   .version().alias('v', 'version')
   .help().alias('h', 'help')
+  .parserConfiguration({ 'dot-notation': false })
   .argv
 
 const options = {
